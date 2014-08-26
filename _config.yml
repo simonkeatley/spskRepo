@@ -1,0 +1,89 @@
+# Jekyll configuration precedence:
+# 1. Gruntfile task
+# 2. config.build.yml
+# 3. config.yml
+# baseurl: {{ site.github.url }}
+# baseurl: /master
+name: Simon Keatley Website
+description: description of the site
+author:
+  name: skeatley
+  email: 
+
+# Grunt handles images and assets.
+ignore: ['node_modules', '.sass-cache']
+exclude: ['node_modules', '.sass-cache']
+
+include: ['.htaccess']
+source: 'app'
+destination: 'dist'
+
+# permalink: /:categories/:title.html
+permalink: /:categories/:title
+# _config.build.yml sets future and show_drafts to false on `grunt build`
+
+future: true
+show_drafts: true
+
+# Markdown library
+markdown: kramdown
+#   extensions: ['fenced_code_blocks', 'smart']
+
+# pygments: true
+
+gems:
+    - jekyll-redirect-from
+
+#PICTUREFILL
+picture:
+  source: "img"
+  output: "img/generated"
+  markup: "picture"
+  presets:
+    apple:
+        # ppi: [1, 1.5, 2]
+        # attr:
+        #     class: "pict"
+        #     itemprop: "image"
+        # source_XL:
+        #     media: "(min-width: 73em)"
+        #     width: "1880"
+        # source_L:
+        #     media: "(min-width: 32em)"
+        #     width: "1280"
+        # source_default: 
+        #     width: "6400"
+    default:
+        ppi: [1]
+        attr:
+            class: "pict"
+            itemprop: "image"
+        source_xl2:
+            media: "(min-width: 67em)"
+            width: "1072"
+        source_xl:
+            media: "(min-width: 60em)"
+            width: "960"
+        source_l2:
+            media: "(min-width: 54.5em)"
+            width: "872"
+        source_l:
+            media: "(min-width: 50em)"
+            width: "800"
+        source_m2:
+            media: "(min-width: 48em)"
+            width: "768"
+        source_m:
+            media: "(min-width: 46.8em)"
+            width: "748"
+        source_s3:
+            media: "(min-width: 39.8em)"
+            width: "636"
+        source_s2:
+            media: "(min-width: 29.75em)"
+            width: "476"
+        source_s:
+            media: "(min-width: 24em)"
+            width: "384"
+        source_default: 
+            width: "240"

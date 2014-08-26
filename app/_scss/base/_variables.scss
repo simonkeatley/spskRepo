@@ -1,0 +1,70 @@
+// Typography
+// $sans-serif: $helvetica;
+$sans-serif: $georgia;
+// $serif: $verdana;
+$serif: $lucida-grande;
+$base-font-family: $sans-serif;
+$header-font-family: $base-font-family;
+
+// Sizes
+$base-font-size: 1.2em;
+$base-line-height: 1.8; //was  * 1.5;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$header-line-height: $base-font-size * 1.25;
+$base-border-radius: em(3);
+
+
+/*------------------------------------*\
+    VARIABLES - COLORS
+\*------------------------------------*/
+$LightOrange: rgba(255, 156, 1, 0.16);
+$Orange : #FF9C01;
+$Green : #73D101;
+$Purple : #903D97;
+$Blue : #007EA1;
+$Black : #2D2D2A;
+$LightPurple : #E9B6FF;
+
+// Colors
+// $blue: #477DCA;
+// $dark-gray: rgba(0, 0, 0, 0.92); //#333;
+$dark-gray: #1c1c1c;
+$medium-gray: #999;
+
+//Probably not using these
+$light-gray: #DDD;
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $Orange;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 7);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: $light-gray;
+
+// Flash Colors
+$alert-color: $light-yellow;
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $base-font-size;
+$form-font-family: $base-font-family;

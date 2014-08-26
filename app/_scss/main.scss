@@ -1,0 +1,177 @@
+@import "h5bp";
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "grid-settings";
+@import "neat/neat";
+@import "base/base";
+
+div.container {
+    overflow: hidden;
+    @include outer-container;
+    
+    @include media($mobile-only) {
+        margin: 0em 0.4em;
+    }
+}
+
+div.nav-container {
+    background-color: $Black;
+    border-bottom: 4px solid $LightPurple;
+}
+
+div.inner-container {
+
+    @include outer-container;
+    @include media($mobile-only) {
+        // margin: 0em 0.4em;
+    }
+}
+//***************** MAIN NAVIGATION *************************
+.header {
+    @include clearfix;
+
+    a {
+        transition: all 0.4s ease-out 0s;
+        padding: 0.8em 0.5em;
+        text-decoration: none;
+        display: block;
+        padding: 0.8em 0;
+    }
+}
+
+.logo {
+   font-family: "whiteboard", $sans-serif;
+   font-weight: normal;
+   font-style: normal;
+   margin: 0;
+   padding: 0;
+   // padding-left:0.3em;
+   font-size: 1em;
+   line-height: inherit;
+   position: relative;
+   z-index: 1;
+   float: left;
+  a { font-weight:400;letter-spacing:0.04em; }
+
+  @media all and (max-width: $mobile-screen) {
+    padding-left:1em;
+  }
+}
+.nav-toggle:after {
+    content: "▼";
+    font-size: 0.8em;
+    padding-right: 1em;
+}
+/* Primary Navigation */
+.nav-toggle {
+    float: right;
+}
+
+.nav-toggle:after {
+    font-size: 0.8em;
+}
+
+@media all and (min-width: $mobile-screen) {
+    .nav-toggle {
+        display: none !important;
+    }
+}
+
+.nav ol, .nav ul {
+    margin: none;
+}
+
+.nav {
+    overflow: hidden;
+    // background: #110000;
+    text-transform: lowercase;
+          /* Medium & Up*/;
+}
+
+.nav a {
+    text-decoration: none;
+    display: block;
+    // padding: 0.8em;
+}
+
+$base-num: 0.03;
+$increment: 0.15;
+
+.nav li:nth-of-type(1) a {
+    background: rgba(255, 255, 255, $base-num + ($increment*2));
+}
+
+.nav li:nth-of-type(2) a {
+    background: rgba(255, 255, 255, $base-num + ($increment*1.75));
+}
+
+.nav li:nth-of-type(3) a {
+    background: rgba(255, 255, 255, $base-num + ($increment*1.5));
+}
+
+.nav li:nth-of-type(4) a {
+    background: rgba(255, 255, 255, $base-num + ($increment*1.25));
+}
+
+.nav li:nth-of-type(5) a {
+    background: rgba(255, 255, 255, $base-num + ($increment*1));
+}
+
+.nav li a:hover, .nav li a:focus, .nav li a:active {
+    background: $Orange;
+    color: white;
+}
+
+.nav .top {
+    display: none;
+}
+
+@media all and (min-width: $mobile-screen) {
+    .nav {
+        background: none;
+        margin: 0;
+        clear: none;
+        max-height: none;
+        float: right;
+    }
+
+    .nav li {
+        display: inline-block;
+    }
+
+    .nav li a {
+        background: none !important;
+        padding: 0.8em 0.9em;
+    }
+}
+
+                                                    /* Nav Small Screen Functionality: http:/netmagazine.com/tutorials/build-smart-mobile-navigation-without-hacks */
+@media all and (max-width: $mobile-screen) {
+    #nav {
+        max-height: 0;
+                                                        /* Usage @include transition(max-height,0.5s,ease-out); */
+        -webkit-transition: max-height 0.4s ease-out;
+        -moz-transition: max-height 0.4s ease-out;
+        -ms-transition: max-height 0.4s ease-out;
+        -o-transition: max-height 0.4s ease-out;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .nav li a {
+        padding: 1em;
+    }
+    #nav:target {
+        max-height: 25em;
+    }
+
+    #nav:target .top {
+        display: block;
+        position: fixed;
+        // bottom: 0;
+        right: 0;
+        width: 5em;
+        background: none;
+        text-indent: -99999em;
+    }
+}
+//***************** MAIN NAVIGATION *************************
